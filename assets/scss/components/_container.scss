@@ -8,6 +8,19 @@
   }
 }
 
+.is-style-hero {
+  padding: 10px 20px;
+
+  @include onlyDesktop {
+    max-width: 1650px;
+    margin: 0 auto;
+  }
+
+  @include Tablet {
+    padding: 0;
+  }
+}
+
 .wp-block-group {
   &.has-background {
     @include Mobile {

@@ -19,8 +19,6 @@ require_once "inc/components/login-screen.php";
 require_once "inc/components/navbar.php";
 require_once "inc/components/sidebars.php";
 require_once "inc/components/group-block-style.php";
-require_once "inc/components/image-block-style.php";
-require_once "inc/style-editor.php";
 
 // Include Gutenberg Blocks
 require_once "inc/gutenberg-blocks/example-block/example-block.php";
@@ -36,7 +34,8 @@ function theme_support()
 	add_theme_support('align-wide');
 	add_theme_support('editor-styles');
 
-	register_nav_menu('headerMenuLocation', 'Header Menu Location');
+	register_nav_menu('headerMenuLeft', 'Header Menu Left');
+	register_nav_menu('headerMenuRight', 'Header Menu Right');
 	add_editor_style('editor.css');
 }
 

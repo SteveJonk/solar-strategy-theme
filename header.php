@@ -15,38 +15,64 @@
 
         <header class="header">
             <div class="header__body container">
-                <a id="js__open-nav" class="header__body__hamburger">
-                    <svg height="25" width="25" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="4.75 7.75 15.5 9.5">
-                        <path
-                            d="M5.5 7.75C5.08579 7.75 4.75 8.08579 4.75 8.5C4.75 8.91421 5.08579 9.25 5.5 9.25V7.75ZM19.5 9.25C19.9142 9.25 20.25 8.91421 20.25 8.5C20.25 8.08579 19.9142 7.75 19.5 7.75V9.25ZM5.5 11.75C5.08579 11.75 4.75 12.0858 4.75 12.5C4.75 12.9142 5.08579 13.25 5.5 13.25V11.75ZM17.5 13.25C17.9142 13.25 18.25 12.9142 18.25 12.5C18.25 12.0858 17.9142 11.75 17.5 11.75V13.25ZM5.5 15.75C5.08579 15.75 4.75 16.0858 4.75 16.5C4.75 16.9142 5.08579 17.25 5.5 17.25V15.75ZM12.5 17.25C12.9142 17.25 13.25 16.9142 13.25 16.5C13.25 16.0858 12.9142 15.75 12.5 15.75V17.25ZM5.5 9.25H19.5V7.75H5.5V9.25ZM5.5 13.25H17.5V11.75H5.5V13.25ZM5.5 17.25H12.5V15.75H5.5V17.25Z"
-                            fill="currentColor"></path>
-                    </svg>
-                </a>
                 <div class="header__body__logo">
                     <a href="<?php echo home_url() ?>"><img src="<?php echo get_theme_mod('navbar_logo'); ?>"
-                            type="image/x-icon" alt="header logo" height="60" loading="eager"></a>
+                            type="image/x-icon" alt="header logo" height="40" loading="eager"></a>
                 </div>
+                <a id="js__open-nav" class="header__body__hamburger">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.33333 17.3333C6.06971 17.3333 6.66667 16.7364 6.66667 16C6.66667 15.2636 6.06971 14.6667 5.33333 14.6667C4.59695 14.6667 4 15.2636 4 16C4 16.7364 4.59695 17.3333 5.33333 17.3333Z"
+                            fill="#E19730" />
+                        <path
+                            d="M26.7463 14.6667H10.5863C9.89414 14.6667 9.33301 15.2278 9.33301 15.92V16.08C9.33301 16.7722 9.89414 17.3333 10.5863 17.3333H26.7463C27.4385 17.3333 27.9997 16.7722 27.9997 16.08V15.92C27.9997 15.2278 27.4385 14.6667 26.7463 14.6667Z"
+                            fill="#E19730" />
+                        <path
+                            d="M26.7467 21.3333H5.25333C4.56114 21.3333 4 21.8945 4 22.5867V22.7467C4 23.4389 4.56114 24 5.25333 24H26.7467C27.4389 24 28 23.4389 28 22.7467V22.5867C28 21.8945 27.4389 21.3333 26.7467 21.3333Z"
+                            fill="#E19730" />
+                        <path
+                            d="M26.7467 8H5.25333C4.56114 8 4 8.56114 4 9.25333V9.41333C4 10.1055 4.56114 10.6667 5.25333 10.6667H26.7467C27.4389 10.6667 28 10.1055 28 9.41333V9.25333C28 8.56114 27.4389 8 26.7467 8Z"
+                            fill="#E19730" />
+                    </svg>
+                </a>
                 <div id="js__nav" class="header__body__navbar">
-                    <a id="js__close-nav" class="header__body__navbar__close" href="#">
-                        <svg height="25" width="25" viewBox="-2 -2 25 25">
-                            <path d="M -2.5783352e-4,-0.00146808 17.435473,18.212367"
-                                style="opacity:1;fill:currentColor;stroke:currentColor;stroke-width:3.23161912;stroke-linecap:round;stroke-miterlimit:4;fill-opacity:1;stroke-opacity:1" />
-                            <path d="M -2.5783352e-4,18.212367 17.435473,-0.00146808"
-                                style="opacity:1;fill:currentColor;stroke:currentColor;stroke-width:3.23161912;stroke-linecap:round;stroke-miterlimit:4;fill-opacity:1;stroke-opacity:1" />
-                        </svg>
-                    </a>
-                    <?php wp_nav_menu(
-                    array(
-                        'theme_location' => 'headerMenuLocation',
-                        'depth' => 2,
-                        'container' => true,
-                        'menu_id' => "navbar",
-                    )
+                    <a class="header__body__navbar__mobile-logo" href="<?php echo home_url() ?>"><img
+                            src="<?php echo get_theme_mod('navbar_logo'); ?>" type="image/x-icon" alt="header logo"
+                            height="40" loading="eager"></a>
+                    <div class="header__body__navbar__left">
+                        <?php wp_nav_menu(
+                        array(
+                            'theme_location' => 'headerMenuLeft',
+                            'depth' => 2,
+                            'container' => true,
+                            'menu_id' => "navbar-left",
+                        )
 
-                ); ?>
+                    ); ?>
+                    </div>
+                    <div class="header__body__navbar__right">
+                        <?php wp_nav_menu(
+                        array(
+                            'theme_location' => 'headerMenuRight',
+                            'depth' => 2,
+                            'container' => true,
+                            'menu_id' => "navbar-right",
+                        )
+
+                    ); ?>
+                    </div>
+                    <a id="js__close-nav" class="header__body__navbar__close" href="#">
+                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.3978 16.1791L3.19972 0.980998C2.71026 0.49154 1.91669 0.491541 1.42724 0.980998L1.3141 1.09413C0.824642 1.58359 0.824642 2.37716 1.3141 2.86662L16.5122 18.0647C17.0016 18.5542 17.7952 18.5542 18.2847 18.0647L18.3978 17.9516C18.8873 17.4621 18.8873 16.6685 18.3978 16.1791Z"
+                                fill="#E19730" />
+                            <path
+                                d="M16.0843 0.886244L0.886241 16.0843C0.396783 16.5738 0.396783 17.3673 0.886241 17.8568L0.999378 17.9699C1.48883 18.4594 2.2824 18.4594 2.77186 17.9699L17.9699 2.77186C18.4594 2.2824 18.4594 1.48884 17.9699 0.999381L17.8568 0.886244C17.3673 0.396787 16.5738 0.396787 16.0843 0.886244Z"
+                                fill="#E19730" />
+                        </svg>
+
+                    </a>
                 </div>
-            </div>
             </div>
         </header>
 

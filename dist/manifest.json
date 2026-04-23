@@ -1,13 +1,80 @@
 {
+  "assets/fonts/Mulish-italic.woff2": {
+    "file": "assets/Mulish-italic-df81cb46.woff2",
+    "src": "assets/fonts/Mulish-italic.woff2"
+  },
+  "assets/fonts/Mulish.woff2": {
+    "file": "assets/Mulish-67e1af65.woff2",
+    "src": "assets/fonts/Mulish.woff2"
+  },
+  "assets/fonts/Poppins-Black.woff2": {
+    "file": "assets/Poppins-Black-55f3b479.woff2",
+    "src": "assets/fonts/Poppins-Black.woff2"
+  },
+  "assets/fonts/Poppins-Bold.woff2": {
+    "file": "assets/Poppins-Bold-5bd7a1e0.woff2",
+    "src": "assets/fonts/Poppins-Bold.woff2"
+  },
+  "assets/fonts/Poppins-ExtraBold.woff2": {
+    "file": "assets/Poppins-ExtraBold-7c7fd857.woff2",
+    "src": "assets/fonts/Poppins-ExtraBold.woff2"
+  },
+  "assets/fonts/Poppins-ExtraLight.woff2": {
+    "file": "assets/Poppins-ExtraLight-d6d2c40d.woff2",
+    "src": "assets/fonts/Poppins-ExtraLight.woff2"
+  },
+  "assets/fonts/Poppins-Light.woff2": {
+    "file": "assets/Poppins-Light-c976ba6a.woff2",
+    "src": "assets/fonts/Poppins-Light.woff2"
+  },
+  "assets/fonts/Poppins-Medium.woff2": {
+    "file": "assets/Poppins-Medium-1a88ca33.woff2",
+    "src": "assets/fonts/Poppins-Medium.woff2"
+  },
+  "assets/fonts/Poppins-Regular.woff2": {
+    "file": "assets/Poppins-Regular-a2c1dd01.woff2",
+    "src": "assets/fonts/Poppins-Regular.woff2"
+  },
+  "assets/fonts/Poppins-SemiBold.woff2": {
+    "file": "assets/Poppins-SemiBold-0bcf29d5.woff2",
+    "src": "assets/fonts/Poppins-SemiBold.woff2"
+  },
+  "assets/fonts/Poppins-Thin.woff2": {
+    "file": "assets/Poppins-Thin-6f2360b8.woff2",
+    "src": "assets/fonts/Poppins-Thin.woff2"
+  },
+  "assets/fonts/Roboto-italic.woff2": {
+    "file": "assets/Roboto-italic-d0ac06a2.woff2",
+    "src": "assets/fonts/Roboto-italic.woff2"
+  },
+  "assets/fonts/Roboto.woff2": {
+    "file": "assets/Roboto-9b7e4c04.woff2",
+    "src": "assets/fonts/Roboto.woff2"
+  },
   "main.css": {
-    "file": "assets/main-8f6c6edf.css",
+    "file": "assets/main-983f8c14.css",
     "src": "main.css"
   },
   "main.js": {
-    "css": [
-      "assets/main-8f6c6edf.css"
+    "assets": [
+      "assets/Roboto-9b7e4c04.woff2",
+      "assets/Roboto-italic-d0ac06a2.woff2",
+      "assets/Mulish-67e1af65.woff2",
+      "assets/Mulish-italic-df81cb46.woff2",
+      "assets/Poppins-Thin-6f2360b8.woff2",
+      "assets/Poppins-ExtraLight-d6d2c40d.woff2",
+      "assets/Poppins-Light-c976ba6a.woff2",
+      "assets/Poppins-Regular-a2c1dd01.woff2",
+      "assets/Poppins-Medium-1a88ca33.woff2",
+      "assets/Poppins-SemiBold-0bcf29d5.woff2",
+      "assets/Poppins-Bold-5bd7a1e0.woff2",
+      "assets/Poppins-ExtraBold-7c7fd857.woff2",
+      "assets/Poppins-Black-55f3b479.woff2"
     ],
-    "file": "assets/main-c76aae46.js",
+    "css": [
+      "assets/main-983f8c14.css"
+    ],
+    "file": "assets/main-ca99d92f.js",
     "isEntry": true,
     "src": "main.js"
   }

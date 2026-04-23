@@ -16,11 +16,6 @@
 @import "./custom-utilities.css";
 */
 
-/* admin bar fix */
-body.admin-bar {
-  max-height: calc(100vh - 32px);
-}
-
 /* Base */
 @import './screens';
 @import './variables';
@@ -31,4 +26,25 @@ body.admin-bar {
 @import './components/admin-login';
 @import './components/buttons';
 @import './components/container';
+@import './components/image';
 @import './components/navbar';
+
+/* admin bar fix */
+body.admin-bar {
+  max-height: calc(100vh - 32px);
+  & .header {
+    top: 32px;
+  }
+  @include Tablet {
+    max-height: calc(100vh - 46px);
+    & .header {
+      top: 46px;
+    }
+  }
+  @include Mobile {
+    max-height: 100vh;
+    & .header {
+      top: 0;
+    }
+  }
+}

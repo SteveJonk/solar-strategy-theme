@@ -15,3 +15,11 @@ register_block_style(
         'label'        => __('Container', 'textdomain'),
     )
 );
+
+register_block_style(
+    'core/group',
+    array(
+        'name'         => 'hero',
+        'label'        => __('Hero header', 'textdomain'),
+    )
+);

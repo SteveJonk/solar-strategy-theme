@@ -1,11 +1,10 @@
 body {
-    --background-color: grey;
-    --color: red;
+  --background-color: grey;
 }
 
 .main-menu {
-    .current-menu-item,
-    .current_page_item {
-        @apply underline;
-    }
+  .current-menu-item,
+  .current_page_item {
+    @apply underline;
+  }
 }
