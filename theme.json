@@ -46,6 +46,18 @@
           "color": "#F9F9F9",
           "name": "Background"
         }
+      ],
+      "gradients": [
+        {
+          "slug": "brand-grey-gradient",
+          "name": "Brand Grey Gradient",
+          "gradient": "linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 70%, rgba(153, 153, 153, 1) 100%)"
+        },
+        {
+          "slug": "brand-sunny-gradient",
+          "name": "Brand Sunny Gradient",
+          "gradient": "linear-gradient(102.64deg, #E5A848 37.92%, #E19730 74.23%);"
+        }
       ]
     },
     "custom": {},
@@ -74,12 +86,12 @@
         {
           "name": "Small",
           "slug": "small",
-          "size": "11px"
+          "size": "14px"
         },
         {
           "name": "Medium",
           "slug": "medium",
-          "size": "14px"
+          "size": "18px"
         },
         {
           "name": "Large",
@@ -107,7 +119,15 @@
       "text": "var(--wp--preset--color--black)"
     },
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--body)"
+      "fontFamily": "var(--wp--preset--font-family--body)",
+      "fontSize": "18px"
+    },
+    "blocks": {
+      "core/button": {
+        "typography": {
+          "fontWeight": "500"
+        }
+      }
     },
     "elements": {
       "heading": {

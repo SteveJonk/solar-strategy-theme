@@ -19,6 +19,7 @@ require_once "inc/components/login-screen.php";
 require_once "inc/components/navbar.php";
 require_once "inc/components/sidebars.php";
 require_once "inc/components/group-block-style.php";
+require_once "inc/components/text-block-style.php";
 
 // Include Gutenberg Blocks
 require_once "inc/gutenberg-blocks/example-block/example-block.php";

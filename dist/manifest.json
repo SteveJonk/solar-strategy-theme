@@ -52,7 +52,7 @@
     "src": "assets/fonts/Roboto.woff2"
   },
   "main.css": {
-    "file": "assets/main-983f8c14.css",
+    "file": "assets/main-8799b79b.css",
     "src": "main.css"
   },
   "main.js": {
@@ -72,9 +72,9 @@
       "assets/Poppins-Black-55f3b479.woff2"
     ],
     "css": [
-      "assets/main-983f8c14.css"
+      "assets/main-8799b79b.css"
     ],
-    "file": "assets/main-ca99d92f.js",
+    "file": "assets/main-2638cee3.js",
     "isEntry": true,
     "src": "main.js"
   }
