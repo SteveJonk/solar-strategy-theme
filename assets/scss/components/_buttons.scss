@@ -3,12 +3,16 @@
     &__link {
       text-shadow: 2px 3px 4px #00000040;
       position: relative;
+      transition: filter 0.3s ease;
 
-      &:hover::after {
-        background-position:
-          calc(50% + 60px) center,
-          center center,
-          center center;
+      &:hover {
+        filter: brightness(1.1) drop-shadow(0 0 2px rgba(255, 180, 0, 0.7));
+        &::after {
+          background-position:
+            calc(50% + 60px) center,
+            center center,
+            center center;
+        }
       }
 
       &::after {
@@ -18,7 +22,7 @@
         aspect-ratio: 1 / 1;
         height: calc(100% + 8px);
         top: -4px;
-        right: -65px;
+        left: calc(100% + 6px);
 
         border-radius: 8px;
         border: 4px solid var(--wp--preset--color--orange);
@@ -43,6 +47,36 @@
           center center,
           calc(50% - 60px) center,
           center center;
+      }
+    }
+  }
+}
+
+.is-style-secondary-animation {
+  & .wp-block-button {
+    &__link {
+      display: flex;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+      &:hover {
+        background-color: var(--wp--preset--color--orange) !important;
+        color: var(--wp--preset--color--white) !important;
+        &::after {
+          filter: brightness(0) invert(1);
+          background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2229%22%20viewBox%3D%220%200%2022%2029%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20opacity%3D%220.8%22%20filter%3D%22url(%23filter0_f_1110_5551)%22%3E%3Ccircle%20cx%3D%225.77745%22%20cy%3D%225.7777%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%2210.1105%22%20cy%3D%225.7777%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%228.66612%22%20cy%3D%2210.1109%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%2213.0001%22%20cy%3D%2210.1109%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2014.4443%2017.3333)%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2010.1113%2017.3333)%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2011.5557%2021.6665)%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%207.22168%2021.6665)%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%2211.5548%22%20cy%3D%2214.4444%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%2215.8878%22%20cy%3D%2214.4444%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%225.77745%22%20cy%3D%225.7777%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%2210.1105%22%20cy%3D%225.7777%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%228.66612%22%20cy%3D%2210.1109%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%2213.0001%22%20cy%3D%2210.1109%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2014.4443%2017.3333)%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2010.1113%2017.3333)%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2011.5557%2021.6665)%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%207.22168%2021.6665)%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%2211.5548%22%20cy%3D%2214.4444%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Ccircle%20cx%3D%2215.8878%22%20cy%3D%2214.4444%22%20r%3D%221.44444%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_f_1110_5551%22%20x%3D%22-0.000325203%22%20y%3D%22-8.10623e-05%22%20width%3D%2221.6657%22%20height%3D%2228.8888%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22shape%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%222.16667%22%20result%3D%22effect1_foregroundBlur_1110_5551%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3C%2Fsvg%3E');
+        }
+      }
+      &::after {
+        content: '';
+        position: static;
+        margin-left: 10px;
+        width: 22px;
+        background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2229%22%20viewBox%3D%220%200%2022%2029%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20opacity%3D%220.8%22%20filter%3D%22url(%23filter0_f_1110_5551)%22%3E%3Ccircle%20cx%3D%225.77745%22%20cy%3D%225.7777%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%2210.1105%22%20cy%3D%225.7777%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%228.66612%22%20cy%3D%2210.1109%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%2213.0001%22%20cy%3D%2210.1109%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2014.4443%2017.3333)%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2010.1113%2017.3333)%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2011.5557%2021.6665)%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%207.22168%2021.6665)%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%2211.5548%22%20cy%3D%2214.4444%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%2215.8878%22%20cy%3D%2214.4444%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%225.77745%22%20cy%3D%225.7777%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%2210.1105%22%20cy%3D%225.7777%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%228.66612%22%20cy%3D%2210.1109%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%2213.0001%22%20cy%3D%2210.1109%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2014.4443%2017.3333)%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2010.1113%2017.3333)%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%2011.5557%2021.6665)%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%221.44444%22%20cy%3D%221.44444%22%20r%3D%221.44444%22%20transform%3D%22matrix(-1%200%200%201%207.22168%2021.6665)%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%2211.5548%22%20cy%3D%2214.4444%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3Ccircle%20cx%3D%2215.8878%22%20cy%3D%2214.4444%22%20r%3D%221.44444%22%20fill%3D%22%23FEA500%22%2F%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_f_1110_5551%22%20x%3D%22-0.000325203%22%20y%3D%22-8.10623e-05%22%20width%3D%2221.6657%22%20height%3D%2228.8888%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22shape%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%222.16667%22%20result%3D%22effect1_foregroundBlur_1110_5551%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3C%2Fsvg%3E');
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
       }
     }
   }

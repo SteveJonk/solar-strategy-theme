@@ -12,9 +12,9 @@
           "name": "White"
         },
         {
-          "slug": "black",
+          "slug": "common-black",
           "color": "#2B2B2B",
-          "name": "Black"
+          "name": "Common Black"
         },
         {
           "slug": "black-600",
