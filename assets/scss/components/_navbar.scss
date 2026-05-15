@@ -94,6 +94,9 @@
             font-weight: 500;
             font-size: 16px;
             color: var(--wp--preset--color--white);
+            &:hover {
+              color: var(--wp--preset--color--orange);
+            }
           }
           &.menu-item.current_page_item {
             & > a {

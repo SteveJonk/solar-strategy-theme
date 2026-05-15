@@ -63,7 +63,15 @@
     "custom": {},
     "dimensions": {},
     "position": {},
-    "shadow": {},
+    "shadow": {
+      "presets": [
+        {
+          "slug": "theme-shadow-default",
+          "name": "Theme Shadow Default",
+          "shadow": "0px 10px 20px 0px rgba(195, 196, 200, 0.21)"
+        }
+      ]
+    },
     "spacing": {
       "margin": true,
       "padding": true

@@ -1,3 +1,9 @@
+.wp-block-button {
+  &__link {
+    white-space: nowrap;
+  }
+}
+
 .is-style-primary-animation {
   & .wp-block-button {
     &__link {
