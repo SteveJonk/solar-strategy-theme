@@ -1,0 +1,14 @@
+.wp-block-separator {
+  &.is-style-modern.has-alpha-channel-opacity {
+    width: 100%;
+    border-bottom: none;
+    height: 1px;
+    background-color: transparent;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      var(--wp--preset--color--white),
+      transparent
+    );
+  }
+}

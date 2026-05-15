@@ -25,6 +25,14 @@ register_block_style(
 );
 
 register_block_style(
+    'core/group',
+    array(
+        'name'         => 'gallery',
+        'label'        => __('Gallery', 'textdomain'),
+    )
+);
+
+register_block_style(
     'core/columns',
     array(
         'name'         => 'footer',

@@ -4,6 +4,12 @@
   }
 }
 
+.is-content-justification-center {
+  & .is-style-primary-animation {
+    margin-left: -63px;
+  }
+}
+
 .is-style-primary-animation {
   & .wp-block-button {
     &__link {
