@@ -93,28 +93,37 @@
       "fontSizes": [
         {
           "name": "Small",
-          "slug": "small",
+          "slug": "theme-small",
           "size": "14px"
         },
         {
+          "name": "Medium Small",
+          "slug": "theme-medium-small",
+          "size": "16px"
+        },
+        {
           "name": "Medium",
-          "slug": "medium",
+          "slug": "theme-medium",
           "size": "18px"
         },
         {
           "name": "Large",
-          "slug": "large",
-          "size": "20px",
-          "fluid": false
+          "slug": "theme-large",
+          "size": "20px"
+        },
+        {
+          "name": "Larger",
+          "slug": "theme-larger",
+          "size": "24px"
         },
         {
           "name": "Extra Large",
-          "slug": "x-large",
+          "slug": "theme-x-large",
           "size": "35px"
         },
         {
           "name": "Extra extra Large",
-          "slug": "xx-large",
+          "slug": "theme-xx-large",
           "size": "60px"
         }
       ]

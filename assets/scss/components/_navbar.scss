@@ -1,3 +1,12 @@
+.blog .header,
+.single-post .header {
+  &__body {
+    background-color: #0c170f8c;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+  }
+}
+
 .header {
   position: fixed;
   top: 0;

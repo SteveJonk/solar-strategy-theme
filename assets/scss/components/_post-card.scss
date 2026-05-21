@@ -1,0 +1,32 @@
+.post-card {
+  width: 100%;
+  background-color: white;
+  box-shadow: var(--wp--preset--shadow--theme-shadow-default);
+  padding: 24px;
+  border-radius: 24px;
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__category {
+    margin: 8px 0;
+    font-size: var(--wp--preset--font-size--theme-small);
+    color: var(--wp--preset--color--orange);
+  }
+
+  &__image {
+    border-radius: 24px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+  &__title {
+    margin: 10px 0;
+    font-weight: 500;
+    font-size: var(--wp--preset--font-size--theme-larger);
+  }
+  & .excerpt {
+    font-size: var(--wp--preset--font-size--theme-medium-small);
+  }
+}

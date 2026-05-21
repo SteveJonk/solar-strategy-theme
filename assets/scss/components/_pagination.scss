@@ -1,0 +1,29 @@
+.nav-links {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  & .page-numbers {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid var(--wp--preset--color--orange);
+    border-radius: 1000px;
+    transition: all 0.2s;
+    box-shadow: var(--wp--preset--shadow--theme-shadow-default);
+    &.current,
+    &:hover {
+      background-color: var(--wp--preset--color--orange);
+      color: white;
+    }
+    &.next,
+    &.prev {
+      width: auto;
+      padding: 0 10px;
+    }
+  }
+}

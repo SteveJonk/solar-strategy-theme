@@ -9,7 +9,7 @@ if (!defined('ABSPATH'))
 
 // Main switch to get frontend assets from a Vite dev server OR from production built folder
 // it is recommended to move it into wp-config.php
-define('IS_VITE_DEVELOPMENT', false);
+define('IS_VITE_DEVELOPMENT', true);
 
 
 require_once "inc/inc.vite.php";
@@ -21,6 +21,8 @@ require_once "inc/components/sidebars.php";
 require_once "inc/components/group-block-style.php";
 require_once "inc/components/text-block-style.php";
 require_once "inc/components/divider-block-style.php";
+require_once "inc/shortcodes/archive-name.php";
+require_once "inc/shortcodes/category-name.php";
 
 // Include Gutenberg Blocks
 require_once "inc/gutenberg-blocks/example-block/example-block.php";
@@ -56,3 +58,7 @@ function replace_all_nbsp_with_space($content)
 add_filter('the_content', 'replace_all_nbsp_with_space', 20);
 add_filter('the_title', 'replace_all_nbsp_with_space', 20);
 add_filter('the_excerpt', 'replace_all_nbsp_with_space', 20);
+
+add_filter('get_the_excerpt', function ($excerpt) {
+	return '<p class="excerpt">' . wp_trim_words($excerpt, 10, '...') . '</p>';
+}, 999);
