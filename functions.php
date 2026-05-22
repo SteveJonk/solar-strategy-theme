@@ -9,7 +9,7 @@ if (!defined('ABSPATH'))
 
 // Main switch to get frontend assets from a Vite dev server OR from production built folder
 // it is recommended to move it into wp-config.php
-define('IS_VITE_DEVELOPMENT', true);
+define('IS_VITE_DEVELOPMENT', false);
 
 
 require_once "inc/inc.vite.php";
@@ -23,6 +23,7 @@ require_once "inc/components/text-block-style.php";
 require_once "inc/components/divider-block-style.php";
 require_once "inc/shortcodes/archive-name.php";
 require_once "inc/shortcodes/category-name.php";
+require_once "inc/shortcodes/child-pages.php";
 
 // Include Gutenberg Blocks
 require_once "inc/gutenberg-blocks/example-block/example-block.php";

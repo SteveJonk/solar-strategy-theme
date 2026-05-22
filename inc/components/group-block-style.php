@@ -9,6 +9,14 @@ register_block_style(
 );
 
 register_block_style(
+    'core/group',
+    array(
+        'name'         => 'glass',
+        'label'        => __('Glass', 'theme'),
+    )
+);
+
+register_block_style(
     'core/columns',
     array(
         'name'         => 'container',
