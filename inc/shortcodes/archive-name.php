@@ -16,6 +16,6 @@ function display_archive_name_shortcode()
         if (is_month()) return get_the_date(_x('F Y', 'monthly archives date format'));
         if (is_day()) return get_the_date(_x('F j, Y', 'daily archives date format'));
     }
-    return '';
+    return 'Blog';
 }
 add_shortcode('archive_name', 'display_archive_name_shortcode');

@@ -1,5 +1,7 @@
 .blog .header,
-.single-post .header {
+.archive .header,
+.single-post .header,
+.error404 .header {
   &__body {
     background-color: #0c170f8c;
     backdrop-filter: blur(30px);
