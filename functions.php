@@ -21,6 +21,7 @@ require_once "inc/components/sidebars.php";
 require_once "inc/components/group-block-style.php";
 require_once "inc/components/text-block-style.php";
 require_once "inc/components/divider-block-style.php";
+require_once "inc/components/list-block-style.php";
 require_once "inc/shortcodes/archive-name.php";
 require_once "inc/shortcodes/category-name.php";
 require_once "inc/shortcodes/child-pages.php";
