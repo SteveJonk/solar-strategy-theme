@@ -15,30 +15,14 @@ define('TAL_VERSION', '1.1.1');
 define('TAL_PATH', trailingslashit(__DIR__));
 
 /**
- * Resolve the public URL of this folder, whether it lives in the parent or child theme.
+ * Public URL of a file in this folder.
+ *
+ * Don't derive this from __DIR__: on hosts with symlinked paths __DIR__ is the resolved path,
+ * which never matches get_template_directory(), and the URL came out empty.
  */
 function tal_url($file = '')
 {
-	static $base = null;
-
-	if (null === $base) {
-		$dir  = wp_normalize_path(trailingslashit(__DIR__));
-		$base = '';
-
-		$roots = array(
-			wp_normalize_path(trailingslashit(get_stylesheet_directory())) => trailingslashit(get_stylesheet_directory_uri()),
-			wp_normalize_path(trailingslashit(get_template_directory()))   => trailingslashit(get_template_directory_uri()),
-		);
-
-		foreach ($roots as $path => $uri) {
-			if (0 === strpos($dir, $path)) {
-				$base = $uri . substr($dir, strlen($path));
-				break;
-			}
-		}
-	}
-
-	return $base . ltrim($file, '/');
+	return get_theme_file_uri('inc/address-lookup/' . ltrim($file, '/'));
 }
 
 require_once TAL_PATH . 'class-tal-settings.php';

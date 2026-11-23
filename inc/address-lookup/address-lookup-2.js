@@ -110,24 +110,43 @@
 
 		var params = response.tal_params || {};
 
-		if ( response.tal_params ) {
-			if ( response.tal_error && window.console ) {
-				console.warn( '[Address Lookup] ' + response.tal_error );
-			}
-			apply( params, response.tal_address || null );
-		} else if ( ! response.tal_redirect && window.console ) {
-			console.warn( '[Address Lookup] CF7 responded without address parameters. Status: ' + response.status, response );
+		if ( response.tal_error && window.console ) {
+			console.warn( '[Address Lookup] ' + response.tal_error );
 		}
 
 		if ( response.tal_redirect ) {
-			var target = new URL( response.tal_redirect, window.location.href );
-
-			Object.keys( params ).forEach( function ( name ) {
-				target.searchParams.set( name, params[ name ] );
-			} );
-
-			window.location.assign( target.toString() );
+			redirect( response.tal_redirect, params );
+			return;
 		}
+
+		if ( response.tal_params ) {
+			apply( params, response.tal_address || null );
+		} else if ( window.console ) {
+			console.warn( '[Address Lookup] CF7 responded without address parameters. Status: ' + response.status, response );
+		}
+	}
+
+	/**
+	 * Leave the page with the parameters on the target URL.
+	 *
+	 * No history.replaceState here: in Chrome a replaceState/pushState (ours or another script's)
+	 * cancels a navigation that is still loading. The timeout starts the navigation after CF7 and any
+	 * other wpcf7mailsent listeners have finished, so nothing in that cycle can cancel it.
+	 */
+	function redirect( url, params ) {
+		var target = new URL( url, window.location.href );
+
+		Object.keys( params ).forEach( function ( name ) {
+			target.searchParams.set( name, params[ name ] );
+		} );
+
+		if ( window.console ) {
+			console.debug( '[Address Lookup] redirecting to ' + target.toString() );
+		}
+
+		setTimeout( function () {
+			window.location.assign( target.toString() );
+		}, 0 );
 	}
 
 	document.addEventListener( 'wpcf7submit', handleSubmit );

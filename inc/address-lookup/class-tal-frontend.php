@@ -25,11 +25,11 @@ class TAL_Frontend
 			return;
 		}
 
-		$file = TAL_PATH . 'address-lookup.js';
+		$file = TAL_PATH . 'address-lookup-2.js';
 
 		wp_enqueue_script(
 			'tal-address-lookup',
-			tal_url('/address-lookup.js'),
+			tal_url('/address-lookup-2.js'),
 			array(),
 			file_exists($file) ? filemtime($file) : TAL_VERSION,
 			true
