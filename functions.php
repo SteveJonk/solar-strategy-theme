@@ -25,6 +25,7 @@ require_once "inc/components/list-block-style.php";
 require_once "inc/shortcodes/archive-name.php";
 require_once "inc/shortcodes/category-name.php";
 require_once "inc/shortcodes/child-pages.php";
+require_once 'inc/address-lookup/init.php';
 
 // Include Gutenberg Blocks
 require_once "inc/gutenberg-blocks/example-block/example-block.php";
