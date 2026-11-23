@@ -65,3 +65,39 @@ add_filter('the_excerpt', 'replace_all_nbsp_with_space', 20);
 add_filter('get_the_excerpt', function ($excerpt) {
 	return '<p class="excerpt">' . wp_trim_words($excerpt, 10, '...') . '</p>';
 }, 999);
+
+/*
+ * Add service selection to contactform 7 webhook
+ */
+
+add_filter( 'ctz_post_request_args', function ( $args ) {
+    $submission = WPCF7_Submission::get_instance();
+    $services   = $submission ? (array) $submission->get_posted_data( 'services' ) : [];
+
+    $map = [
+        'Zonnepanelen'  => 'zonnepaneel_1_in_offerte',
+        'Thuisbatterij' => 'thuisbatterij_1_in_offerte',
+        'Laadpaal'      => 'laadpaal_1_in_offerte',
+        'EMS'           => 'ems_1_in_offerte',
+    ];
+
+    // "Totaaloplossing" = all products
+    if ( in_array( 'Totaaloplossing', $services, true ) ) {
+        $services = array_keys( $map );
+    }
+
+    $is_json = is_string( $args['body'] );
+    $body    = $is_json ? json_decode( $args['body'], true ) : $args['body'];
+    if ( ! is_array( $body ) ) {
+        return $args; // invalid custom body JSON: leave the request untouched
+    }
+
+    foreach ( $map as $label => $key ) {
+        if ( in_array( $label, $services, true ) ) {
+            $body[ $key ] = 1;
+        }
+    }
+
+    $args['body'] = $is_json ? wp_json_encode( $body ) : $body;
+    return $args;
+} );

@@ -13,6 +13,9 @@ function display_child_pages_shortcode()
         <div class="child-pages">
             <?php foreach ($child_pages as $page) { ?>
                 <div class="child-pages__item">
+					<div class="child-pages__item__pill">
+						<?php the_field('extras', $page->ID); ?>
+					</div>
                     <div class="child-pages__item__image">
                         <img src="<?php echo get_the_post_thumbnail_url($page->ID, 'large'); ?>"
                             alt="<?php echo $page->post_title; ?>">
@@ -22,13 +25,16 @@ function display_child_pages_shortcode()
                         <?php the_field('features', $page->ID); ?>
                     </div>
                     <div class="child-pages__item__viewbox">
-                        <h5 class="child-pages__item__viewbox__price"><?php the_field('price', $page->ID); ?></h5>
+						<div>
+							<h5 class="child-pages__item__viewbox__price"><?php the_field('price', $page->ID); ?></h5>
+							<span class="child-pages__item__viewbox__price-after"><?php the_field('after_price', $page->ID); ?></span>
+						</div>
                         <a href="<?php echo get_permalink($page->ID); ?>"
                             class="child-pages__item__viewbox__button"><?php _e('Bekijk product', 'theme'); ?>
                         </a>
                     </div>
-                    <a class="child-pages__item__request-advise" href="<?php echo home_url('/contact'); ?>">
-                        <?php _e('Vraag advies aan', 'theme'); ?>
+                    <a class="child-pages__item__request-advise popmake-557" href="<?php echo home_url('/offerte-aanvraag/'); ?>">
+                        <?php _e('Offerte aanvragen', 'theme'); ?>
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="29" viewBox="0 0 22 29" fill="none">
                             <g opacity="0.8">
                                 <circle cx="5.77745" cy="5.7777" r="1.44444" fill="currentColor" />

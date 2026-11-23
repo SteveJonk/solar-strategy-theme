@@ -19,6 +19,14 @@ register_block_style(
 register_block_style(
     'core/list',
     array(
+        'name'         => 'sun',
+        'label'        => __('Sun', 'theme'),
+    )
+);
+
+register_block_style(
+    'core/list',
+    array(
         'name'         => 'circle',
         'label'        => __('Circle', 'theme'),
     )
