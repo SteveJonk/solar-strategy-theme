@@ -102,24 +102,32 @@
 			return;
 		}
 
-		if ( ! response.tal_params ) {
-			if ( window.console ) {
-				console.warn( '[Address Lookup] CF7 responded without address parameters. Status: ' + response.status, response );
-			}
-			return;
-		}
-
 		// wpcf7submit and wpcf7mailsent both carry the same response object.
 		if ( response.__talHandled ) {
 			return;
 		}
 		response.__talHandled = true;
 
-		if ( response.tal_error && window.console ) {
-			console.warn( '[Address Lookup] ' + response.tal_error );
+		var params = response.tal_params || {};
+
+		if ( response.tal_params ) {
+			if ( response.tal_error && window.console ) {
+				console.warn( '[Address Lookup] ' + response.tal_error );
+			}
+			apply( params, response.tal_address || null );
+		} else if ( ! response.tal_redirect && window.console ) {
+			console.warn( '[Address Lookup] CF7 responded without address parameters. Status: ' + response.status, response );
 		}
 
-		apply( response.tal_params, response.tal_address || null );
+		if ( response.tal_redirect ) {
+			var target = new URL( response.tal_redirect, window.location.href );
+
+			Object.keys( params ).forEach( function ( name ) {
+				target.searchParams.set( name, params[ name ] );
+			} );
+
+			window.location.assign( target.toString() );
+		}
 	}
 
 	document.addEventListener( 'wpcf7submit', handleSubmit );

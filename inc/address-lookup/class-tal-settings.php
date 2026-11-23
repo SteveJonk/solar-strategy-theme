@@ -33,7 +33,7 @@ class TAL_Settings {
 			'param_postcode'    => 'postcode',
 			'param_housenumber' => 'house-number',
 			'param_address'     => 'address',
-			'param_city'        => '',
+			'param_city'        => 'city',
 
 			// What goes into the address parameter.
 			'address_format'    => 'street',
@@ -128,7 +128,7 @@ class TAL_Settings {
 			'param_postcode'    => array( __( 'Postcode parameter', 'theme' ), 'tal_params', 'text' ),
 			'param_housenumber' => array( __( 'House number parameter', 'theme' ), 'tal_params', 'text' ),
 			'param_address'     => array( __( 'Address parameter', 'theme' ), 'tal_params', 'text' ),
-			'param_city'        => array( __( 'City parameter', 'theme' ), 'tal_params', 'text', __( 'Optional. Empty means no city parameter is added.', 'theme' ) ),
+			'param_city'        => array( __( 'City parameter', 'theme' ), 'tal_params', 'text', __( 'Empty means no city parameter is added.', 'theme' ) ),
 			'address_format'    => array(
 				__( 'Address parameter contains', 'theme' ),
 				'tal_params',

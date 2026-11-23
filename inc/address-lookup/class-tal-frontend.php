@@ -25,7 +25,7 @@ class TAL_Frontend
 			return;
 		}
 
-		$file = TAL_PATH . 'assets/address-lookup.js';
+		$file = TAL_PATH . 'address-lookup.js';
 
 		wp_enqueue_script(
 			'tal-address-lookup',

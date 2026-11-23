@@ -12,8 +12,67 @@ defined( 'ABSPATH' ) || exit;
 
 class TAL_CF7 {
 
+	const REDIRECT_META = '_tal_redirect_page';
+
 	public static function init() {
 		add_filter( 'wpcf7_feedback_response', array( __CLASS__, 'add_address' ), 10, 2 );
+		add_filter( 'wpcf7_editor_panels', array( __CLASS__, 'add_panel' ) );
+		add_action( 'wpcf7_save_contact_form', array( __CLASS__, 'save_panel' ) );
+	}
+
+	/* ------------------------------------------------- per form redirect */
+
+	public static function add_panel( $panels ) {
+		$panels['tal-redirect'] = array(
+			'title'    => __( 'Redirect', 'theme' ),
+			'callback' => array( __CLASS__, 'render_panel' ),
+		);
+
+		return $panels;
+	}
+
+	/**
+	 * @param WPCF7_ContactForm $form
+	 */
+	public static function render_panel( $form ) {
+		echo '<h2>' . esc_html__( 'Redirect after submission', 'theme' ) . '</h2>';
+		echo '<p>' . esc_html__( 'Send the visitor to this page after the mail is sent. The address parameters are added to its URL.', 'theme' ) . '</p>';
+
+		wp_dropdown_pages(
+			array(
+				'name'              => 'tal_redirect_page',
+				'selected'          => (int) get_post_meta( $form->id(), self::REDIRECT_META, true ),
+				'show_option_none'  => __( '— No redirect —', 'theme' ),
+				'option_none_value' => 0,
+			)
+		);
+	}
+
+	/**
+	 * CF7 has already checked the nonce and capability before this runs.
+	 *
+	 * @param WPCF7_ContactForm $form
+	 */
+	public static function save_panel( $form ) {
+		if ( ! isset( $_POST['tal_redirect_page'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
+			return;
+		}
+
+		$page = absint( $_POST['tal_redirect_page'] ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+
+		if ( $page ) {
+			update_post_meta( $form->id(), self::REDIRECT_META, $page );
+		} else {
+			delete_post_meta( $form->id(), self::REDIRECT_META );
+		}
+	}
+
+	protected static function redirect_url( $submission ) {
+		$form = $submission->get_contact_form();
+		$page = $form ? (int) get_post_meta( $form->id(), self::REDIRECT_META, true ) : 0;
+		$url  = $page && 'publish' === get_post_status( $page ) ? get_permalink( $page ) : '';
+
+		return $url ? $url : '';
 	}
 
 	/**
@@ -94,6 +153,14 @@ class TAL_CF7 {
 
 		if ( ! $submission ) {
 			return $response;
+		}
+
+		// Only redirect when the mail actually went out.
+		if ( 'mail_sent' === $status ) {
+			$redirect = self::redirect_url( $submission );
+			if ( $redirect ) {
+				$response['tal_redirect'] = $redirect;
+			}
 		}
 
 		$data    = $submission->get_posted_data();
