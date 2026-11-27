@@ -88,6 +88,7 @@ class TAL_CF7 {
 				'house_number' => $options['param_housenumber'],
 				'address'      => $options['param_address'],
 				'city'         => $options['param_city'],
+				'email'        => $options['param_email'],
 			)
 		);
 	}
@@ -95,7 +96,7 @@ class TAL_CF7 {
 	/**
 	 * Turn a resolved address into URL parameters.
 	 */
-	public static function build_params( array $address ) {
+	public static function build_params( array $address, $email = '' ) {
 		$options = TAL_Settings::get();
 		$names   = self::param_names();
 
@@ -115,6 +116,7 @@ class TAL_CF7 {
 			'house_number' => $address['house_number'],
 			'address'      => $street,
 			'city'         => $address['city'],
+			'email'        => $email,
 		);
 
 		$params = array();
@@ -168,6 +170,7 @@ class TAL_CF7 {
 
 		$postcode    = self::field( $data, $options['field_postcode'] );
 		$housenumber = self::field( $data, $options['field_housenumber'] );
+		$email       = sanitize_email( self::field( $data, $options['field_email'] ) );
 
 		// Not our form.
 		if ( '' === $postcode || '' === $housenumber ) {
@@ -187,14 +190,15 @@ class TAL_CF7 {
 					'postcode'     => $postcode,
 					'city'         => '',
 					'formatted'    => '',
-				)
+				),
+				$email
 			);
 
 			return $response;
 		}
 
 		$response['tal_address'] = $address;
-		$response['tal_params']  = self::build_params( $address );
+		$response['tal_params']  = self::build_params( $address, $email );
 
 		return $response;
 	}

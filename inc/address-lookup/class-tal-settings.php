@@ -28,12 +28,14 @@ class TAL_Settings {
 			// Field names on the short Contact Form 7 form.
 			'field_postcode'    => 'your-postcode',
 			'field_housenumber' => 'your-housenumber',
+			'field_email'       => 'your-email',
 
 			// URL parameter names written after submission.
 			'param_postcode'    => 'postcode',
 			'param_housenumber' => 'house-number',
 			'param_address'     => 'address',
 			'param_city'        => 'city',
+			'param_email'       => 'email',
 
 			// What goes into the address parameter.
 			'address_format'    => 'street',
@@ -124,11 +126,13 @@ class TAL_Settings {
 
 			'field_postcode'    => array( __( 'Postcode field', 'theme' ), 'tal_form', 'text' ),
 			'field_housenumber' => array( __( 'House number field', 'theme' ), 'tal_form', 'text' ),
+			'field_email'       => array( __( 'Email field', 'theme' ), 'tal_form', 'text' ),
 
 			'param_postcode'    => array( __( 'Postcode parameter', 'theme' ), 'tal_params', 'text' ),
 			'param_housenumber' => array( __( 'House number parameter', 'theme' ), 'tal_params', 'text' ),
 			'param_address'     => array( __( 'Address parameter', 'theme' ), 'tal_params', 'text' ),
 			'param_city'        => array( __( 'City parameter', 'theme' ), 'tal_params', 'text', __( 'Empty means no city parameter is added.', 'theme' ) ),
+			'param_email'       => array( __( 'Email parameter', 'theme' ), 'tal_params', 'text', __( 'Empty means no email parameter is added.', 'theme' ) ),
 			'address_format'    => array(
 				__( 'Address parameter contains', 'theme' ),
 				'tal_params',
